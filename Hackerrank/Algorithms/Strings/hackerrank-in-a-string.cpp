@@ -5,6 +5,8 @@ using namespace std;
 #define pb push_back
 #define range(i, L, R, step) for (i = L; i < R; i += step)
 #define foreach(it, l) for (auto it = l.begin(); it != l.end(); ++it)
+#define foreachr(it, l) for (auto it = l.rbegin(); it != l.rend(); ++it)
+#define in(el, lst) (lst.find(el) != lst.end())
 
 typedef pair<int, int> pii;
 typedef vector<int> vi;
@@ -20,6 +22,19 @@ typedef long long int int64;
 typedef unsigned long long int uint64;
 
 int main() {
-    // main code
+    int _, q;
+    string s, ex;
+    cin >> q;
+    range(_, 0, q, 1) {
+        cin >> s;
+        ex = "hackerrank";
+        auto p = ex.begin();
+        foreach (c, s) {
+            if (*c == *p) {
+                p++;
+            }
+        }
+        cout << (p == ex.end() ? "YES" : "NO") << endl;
+    }
     return 0;
 }
